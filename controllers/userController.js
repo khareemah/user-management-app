@@ -8,15 +8,8 @@ const createUser = async (req, res) => {
 };
 
 const getAllUsers = async (req, res) => {
-  const {
-    sort,
-    numericFilters,
-    gender,
-    maritalStatus,
-    firstName,
-    lastName,
-  } = req.query;
-z
+  const { sort, numericFilters, gender, maritalStatus, firstName, lastName } =
+    req.query;
   const queryObject = {};
   if (firstName) {
     queryObject.firstName = { $regex: `^${firstName}$`, $options: 'i' };
